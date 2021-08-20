@@ -15,7 +15,7 @@ from flask import Flask, jsonify, render_template
 # Create connection to Hawaii.sqlite file
 #################################################
 
-connection_string = "postgres:postgres@localhost:5432/NFL_Fantasy_Data"
+connection_string = "rhbomegpaemmdu:dfb3901ad0e550f6aec9f2bf1b1b7eed52a6321eed339d95ce702e36c5963181@ec2-54-83-82-187.compute-1.amazonaws.com:5432/d2eke12h3f7nqb"
 engine = create_engine(f'postgresql://{connection_string}')
 
 # reflect an existing database into a new model
