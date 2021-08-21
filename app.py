@@ -25,17 +25,27 @@ Base = automap_base()
 Base.prepare(engine, reflect=True)
 
 # # Save references to the measurement and station tables in the database
-print(Base.classes.keys())
-ADP = Base.classes.ADP_Data
-DEF = Base.classes.DEF_Data
-K = Base.classes.K_Data
-Position_Dropdown = Base.classes.Position_dropdown
-QB = Base.classes.QB_Data
-RB = Base.classes.RB_Data
-TE = Base.classes.TE_Data
-WR = Base.classes.WR_Data
-Highlights = Base.classes.Highlights_Data
-BoxPlot = Base.classes.BoxPlot
+print(Base.metadata.tables.keys())
+ADP = Base.metadata.tables['ADP_Data']
+print(ADP)
+DEF = Base.metadata.tables['DEF_Data']
+# Base.classes.DEF_Data
+K = Base.metadata.tables['K_Data']
+# Base.classes.K_Data
+Position_Dropdown = Base.metadata.tables['Position_dropdown']
+# Base.classes.Position_dropdown
+QB = Base.metadata.tables['QB_Data']
+# Base.classes.QB_Data
+RB = Base.metadata.tables['RB_Data']
+# Base.classes.RB_Data
+TE = Base.metadata.tables['TE_Data']
+# Base.classes.TE_Data
+WR = Base.metadata.tables['WR_Data']
+# Base.classes.WR_Data
+Highlights = Base.metadata.tables['Highlights_Data']
+# Base.classes.Highlights_Data
+BoxPlot = Base.metadata.tables['BoxPlot']
+# Base.classes.BoxPlot
 # Initialize Flask
 #################################################
 app = Flask(__name__)
