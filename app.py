@@ -74,7 +74,7 @@ def highlights_data():
     """Return a list of precipitation (prcp)and date (date) data"""
     
     # Create new variable to store results from query to Measurement table for prcp and date columns
-    adp_query_results = session.query(Highlights.Name,Highlights.Team, Highlights.Position,Highlights.AverageDraftPosition,Highlights.AverageDraftPositionPPR, Highlights.ByeWeek,Highlights.LastSeasonFantasyPoints,Highlights.ProjectedFantasyPoints).all()
+    adp_query_results = session.query(Highlights.c.Name,Highlights.c.Team, Highlights.c.Position,Highlights.c.AverageDraftPosition,Highlights.c.AverageDraftPositionPPR, Highlights.c.ByeWeek,Highlights.c.LastSeasonFantasyPoints,Highlights.c.ProjectedFantasyPoints).all()
 
     # Close session
     session.close()
@@ -110,7 +110,7 @@ def adp_data():
     """Return a list of precipitation (prcp)and date (date) data"""
     
     # Create new variable to store results from query to Measurement table for prcp and date columns
-    adp_query_results = session.query(ADP.Name,ADP.Team, ADP.Position,ADP.AverageDraftPosition,ADP.AverageDraftPositionPPR, ADP.ByeWeek,ADP.LastSeasonFantasyPoints,ADP.ProjectedFantasyPoints).all()
+    adp_query_results = session.query(ADP.c.Name,ADP.c.Team, ADP.c.Position,ADP.c.AverageDraftPosition,ADP.c.AverageDraftPositionPPR, ADP.c.ByeWeek,ADP.c.LastSeasonFantasyPoints,ADP.c.ProjectedFantasyPoints).all()
 
     # Close session
     session.close()
@@ -144,7 +144,7 @@ def projected_data():
     """Return a list of precipitation (prcp)and date (date) data"""
     
     # Create new variable to store results from query to Measurement table for prcp and date columns
-    projected_query_results = session.query(BoxPlot.NAME,BoxPlot.POSITION,BoxPlot.PROJECTED_POINTS).all()
+    projected_query_results = session.query(BoxPlot.c.NAME,BoxPlot.c.POSITION,BoxPlot.c.PROJECTED_POINTS).all()
 
     # Close session
     session.close()
@@ -175,7 +175,7 @@ def position_drop_down_data():
     """Return a list of precipitation (prcp)and date (date) data"""
     
     # Create new variable to store results from query to Measurement table for prcp and date columns
-    position_query_results = session.query(Position_Dropdown.Position).all()
+    position_query_results = session.query(Position_Dropdown.c.Position).all()
 
     print(position_query_results)
     # Close session
@@ -204,7 +204,7 @@ def DEF_Data():
     session = Session(engine)
 
 #     """Return a list of all columns from the DEF table in the database""" 
-    def_query_results = session.query(DEF.Name, DEF.Team, DEF.Position, DEF.AverageDraftPosition, DEF.AverageDraftPositionPPR,DEF.ByeWeek, DEF.LastSeasonFantasyPoints,DEF.ProjectedFantasyPoints).all()
+    def_query_results = session.query(DEF.c.Name, DEF.c.Team, DEF.c.Position, DEF.c.AverageDraftPosition, DEF.c.AverageDraftPositionPPR,DEF.c.ByeWeek, DEF.c.LastSeasonFantasyPoints,DEF.c.ProjectedFantasyPoints).all()
 
 #     session.close()  
     
@@ -229,7 +229,7 @@ def K_Data():
     session = Session(engine)
 
     """Return a list of all columns from the K table from the database""" 
-    def_query_results = session.query(K.Name, K.Team, K.Position, K.AverageDraftPosition, K.AverageDraftPositionPPR,K.ByeWeek, K.LastSeasonFantasyPoints,K.ProjectedFantasyPoints).all()
+    def_query_results = session.query(K.c.Name, K.c.Team, K.c.Position, K.c.AverageDraftPosition, K.c.AverageDraftPositionPPR,K.c.ByeWeek, K.c.LastSeasonFantasyPoints,K.c.ProjectedFantasyPoints).all()
 
     session.close()  
     
@@ -253,7 +253,7 @@ def QB_Data():
     session = Session(engine)
 
     """Return a list of all columns from the QB table from the database""" 
-    def_query_results = session.query(QB.Name, QB.Team, QB.Position, QB.AverageDraftPosition, QB.AverageDraftPositionPPR,QB.ByeWeek, QB.LastSeasonFantasyPoints,QB.ProjectedFantasyPoints).all()
+    def_query_results = session.query(QB.c.Name, QB.c.Team, QB.c.Position, QB.c.AverageDraftPosition, QB.c.AverageDraftPositionPPR,QB.c.ByeWeek, QB.c.LastSeasonFantasyPoints,QB.c.ProjectedFantasyPoints).all()
 
     session.close()  
     
@@ -278,7 +278,7 @@ def RB_Data():
     session = Session(engine)
 
     """Return a list of all columns from the RB table from the database""" 
-    def_query_results = session.query(RB.Name, RB.Team, RB.Position, RB.AverageDraftPosition, RB.AverageDraftPositionPPR,RB.ByeWeek, RB.LastSeasonFantasyPoints,RB.ProjectedFantasyPoints).all()
+    def_query_results = session.query(RB.c.Name, RB.c.Team, RB.c.Position, RB.c.AverageDraftPosition, RB.c.AverageDraftPositionPPR,RB.c.ByeWeek, RB.c.LastSeasonFantasyPoints,RB.c.ProjectedFantasyPoints).all()
 
     session.close()  
     
@@ -304,7 +304,7 @@ def WR_Data():
     """Return a list of all columns from the WR table from the database""" 
 
    
-    def_query_results = session.query(WR.Name, WR.Team, WR.Position, WR.AverageDraftPosition, WR.AverageDraftPositionPPR,WR.ByeWeek, WR.LastSeasonFantasyPoints,WR.ProjectedFantasyPoints).all()
+    def_query_results = session.query(WR.c.Name, WR.c.Team, WR.c.Position, WR.c.AverageDraftPosition, WR.c.AverageDraftPositionPPR,WR.c.ByeWeek, WR.c.LastSeasonFantasyPoints,WR.c.ProjectedFantasyPoints).all()
 
     session.close()  
     
@@ -329,7 +329,7 @@ def TE_Data():
 
     """Return a list of all columns from the TE table from the database""" 
 
-    def_query_results = session.query(TE.Name, TE.Team, TE.Position, TE.AverageDraftPosition, TE.AverageDraftPositionPPR,TE.ByeWeek, TE.LastSeasonFantasyPoints,TE.ProjectedFantasyPoints).all()
+    def_query_results = session.query(TE.c.Name, TE.c.Team, TE.c.Position, TE.c.AverageDraftPosition, TE.c.AverageDraftPositionPPR,TE.c.ByeWeek, TE.c.LastSeasonFantasyPoints,TE.c.ProjectedFantasyPoints).all()
 
     session.close()  
     
@@ -354,7 +354,7 @@ def Highlight_Data():
 
     """Return a list of all columns from the TE table from the database""" 
 
-    def_query_results = session.query( func.min(QB.AverageDraftPosition), QB.Name, QB.Team, QB.Position, QB.AverageDraftPosition, QB.AverageDraftPositionPPR,QB.ByeWeek, QB.LastSeasonFantasyPoints,QB.ProjectedFantasyPoints).all()
+    def_query_results = session.query( func.min(QB.c.AverageDraftPosition), QB.c.Name, QB.c.Team, QB.c.Position, QB.c.AverageDraftPosition, QB.c.AverageDraftPositionPPR,QB.c.ByeWeek, QB.c.LastSeasonFantasyPoints,QB.c.ProjectedFantasyPoints).all()
 
     session.close()  
     
